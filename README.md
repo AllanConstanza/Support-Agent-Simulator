@@ -1,5 +1,8 @@
 # Support Agent Training Simulator
 
+**Live demo:** https://support-agent-simulator.vercel.app (runs in Demo Mode — scripted responses,
+no API key required, free to click around)
+
 A practice tool for learning **ServiceNow-style Incident Management**. An AI plays the role of a
 customer contacting support over live chat; you play the support agent, working the incident the
 way you would in ServiceNow's Agent Workspace (Impact/Urgency/Priority, States, Assignment Groups,
