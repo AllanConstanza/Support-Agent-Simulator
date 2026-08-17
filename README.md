@@ -188,20 +188,3 @@ Open `http://localhost:3000`.
 5. Adjusting Impact/Urgency recalculates Priority automatically.
 6. Setting **State → Resolved** triggers the coaching evaluation; the feedback panel appears below
    the incident form once it's ready.
-
-## Deploying a public demo
-
-A minimal free-tier setup for a live, clickable link:
-
-1. **Backend → Render.com** (free web service tier): point it at `backend/`, build command
-   `pip install -r requirements.txt`, start command
-   `alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port $PORT`. Set env vars
-   `DEMO_MODE=true` and `DATABASE_URL=sqlite:///./ticket_sim.db` — **do not** set
-   `ANTHROPIC_API_KEY` there at all. Render's free disk is ephemeral, so SQLite data resets on
-   redeploy/restart, which is desirable for a public demo.
-2. **Frontend → Vercel** (free tier, native Next.js support): point it at `frontend/`, set
-   `NEXT_PUBLIC_API_URL` to the Render backend's URL.
-3. Back on Render, set `ALLOWED_ORIGINS` to the Vercel URL so the backend's CORS allows it.
-4. Confirm by opening the Vercel URL in a private/incognito window and clicking through — the
-   "Demo Mode" banner should appear, and creating/chatting/resolving an incident should work with
-   no key configured anywhere in that environment.
