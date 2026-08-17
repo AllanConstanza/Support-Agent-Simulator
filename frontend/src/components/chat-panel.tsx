@@ -123,7 +123,7 @@ export function ChatPanel({ incidentId }: { incidentId: number }) {
         <span className="text-xs text-muted-foreground">Live chat with customer</span>
       </div>
 
-      <ScrollArea className="flex-1 px-4 py-3">
+      <ScrollArea className="min-h-0 flex-1 px-4 py-3">
         <div className="flex flex-col gap-3">
           {loading && <p className="text-xs text-muted-foreground">Loading conversation…</p>}
           {!loading && messages.length === 0 && (
